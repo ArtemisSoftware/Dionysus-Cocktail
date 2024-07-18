@@ -3,6 +3,7 @@
 import 'package:dionysus_cocktail/data/network/constants/constants.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../mapper/drink_mapper.dart';
 import 'dto/drink_dto.dart';
 import 'package:dio/dio.dart';
 
@@ -14,9 +15,5 @@ abstract class CocktailApi {
   factory CocktailApi(Dio dio) = _CocktailApi;
 
   @GET('/search.php')
-  Future<HttpResponse<List<DrinkDto>>> getDrinks(
-      {
-       @Query("s") String name,
-     }
-  );
+  Future<HttpResponse<List<DrinkDto>>> getDrinks(@Query("s") String name);
 }

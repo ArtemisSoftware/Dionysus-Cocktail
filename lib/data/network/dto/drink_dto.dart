@@ -1,3 +1,7 @@
+
+import 'package:json_annotation/json_annotation.dart';
+
+@JsonSerializable()
 class DrinkDto {
   final int idDrink;
   final String strDrink;
