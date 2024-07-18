@@ -1,5 +1,7 @@
 import 'package:dionysus_cocktail/data/network/dto/drink_dto.dart';
 
+import '../../domain/models/drink.dart';
+
 class DrinkMapper {
 
   static DrinkDto fromJson(Map < String, dynamic > map) {
@@ -12,6 +14,17 @@ class DrinkMapper {
       // TODO: rever isto
       //strImageSource: map['strImageSource'] != null && map['strImageSource'] != "" ? map['strImageSource'] : kDefaultImage,
       modifiedAt: map['publishedAt'] ?? "",
+    );
+  }
+
+  static Drink toDrink(DrinkDto drink) {
+    return Drink(
+      id: drink.idDrink,
+      name: drink.strDrink,
+      description: drink.strIBA,
+      urlThumbnail: drink.strDrinkThumb,
+      urlImage: drink.strImageSource,
+      modifiedAt: drink.modifiedAt,
     );
   }
 
