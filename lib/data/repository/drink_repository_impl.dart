@@ -24,7 +24,7 @@ class DrinkRepositoryImpl implements DrinkRepository {
         return Success((httpResponse.data.map((item) => DrinkMapper.toDrink(item)).toList()));
       } else {
         return Failed(
-            DioError(
+            DioException(
                 error: httpResponse.response.statusMessage,
                 response: httpResponse.response,
                 type: DioExceptionType.badResponse,
