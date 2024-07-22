@@ -1,6 +1,8 @@
+import 'package:dionysus_cocktail/di/app_module.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
+  await initializeDependencies();
   runApp(const MyApp());
 }
 
