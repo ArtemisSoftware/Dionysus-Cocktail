@@ -10,10 +10,10 @@ class DrinkMapper {
       strDrink: map['strDrink'] ?? "",
       strIBA: map['strIBA'] ?? "",
       strDrinkThumb: map['strDrinkThumb'] ?? "",
-      strImageSource: map['strImageSource'],
-      // TODO: rever isto
-      //strImageSource: map['strImageSource'] != null && map['strImageSource'] != "" ? map['strImageSource'] : kDefaultImage,
-      modifiedAt: map['publishedAt'] ?? "",
+      // strImageSource: map['strImageSource'],
+      // // TODO: rever isto
+      // //strImageSource: map['strImageSource'] != null && map['strImageSource'] != "" ? map['strImageSource'] : kDefaultImage,
+      dateModified: map['dateModified'] ?? "",
     );
   }
 
@@ -23,8 +23,8 @@ class DrinkMapper {
       name: drink.strDrink,
       description: drink.strIBA,
       urlThumbnail: drink.strDrinkThumb,
-      urlImage: drink.strImageSource,
-      modifiedAt: drink.modifiedAt,
+      // urlImage: drink.strImageSource,
+      modifiedAt: drink.dateModified,
     );
   }
 

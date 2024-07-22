@@ -3,20 +3,20 @@ import 'package:json_annotation/json_annotation.dart';
 
 @JsonSerializable()
 class DrinkDto {
-  final int idDrink;
+  final String ? idDrink;
   final String strDrink;
   final String strIBA;
   final String strDrinkThumb;
-  final String strImageSource;
-  final String modifiedAt;
+  // final String strImageSource;
+  final String dateModified;
 
   const DrinkDto({
     required this.idDrink,
     required this.strDrink,
     required this.strIBA,
     required this.strDrinkThumb,
-    required this.strImageSource,
-    required this.modifiedAt,
+    // required this.strImageSource,
+    required this.dateModified,
   });
 }
 

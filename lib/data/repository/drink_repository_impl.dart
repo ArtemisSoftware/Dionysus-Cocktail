@@ -6,9 +6,10 @@ import 'package:dionysus_cocktail/data/network/dto/drink_dto.dart';
 import 'package:dionysus_cocktail/domain/models/drink.dart';
 
 import 'package:dionysus_cocktail/domain/resource.dart';
+import 'package:logger/logger.dart';
 
 import '../../domain/repository/drink_repository.dart';
-
+final logger = Logger();
 class DrinkRepositoryImpl implements DrinkRepository {
   final CocktailApi _cocktailApi;
 

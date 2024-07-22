@@ -16,8 +16,8 @@ class Loading extends HomeState {
   const Loading(): super(const [], null);
 }
 
-class RemoteArticlesDone extends HomeState {
-  const RemoteArticlesDone(List<Drink> drinks) : super(drinks, null);
+class RemoteDrinksDone extends HomeState {
+  const RemoteDrinksDone(List<Drink> drinks) : super(drinks, null);
 }
 
 class Error extends HomeState {

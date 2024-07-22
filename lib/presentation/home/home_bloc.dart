@@ -18,11 +18,12 @@ class HomeBloc extends Bloc<HomeEvent,HomeState> {
 
     if (result is Resource && result.data!.isNotEmpty) {
       emit(
-          RemoteArticlesDone(result.data!)
+          RemoteDrinksDone(result.data!)
       );
     }
 
     if (result is Failed) {
+      print(result.error!.message);
       emit(
           Error(result.error!)
       );
