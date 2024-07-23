@@ -9,6 +9,7 @@ class DrinkDto {
   final String strDrinkThumb;
   final String strImageSource;
   final String dateModified;
+  final String strInstructions;
 
   const DrinkDto({
     required this.idDrink,
@@ -17,6 +18,7 @@ class DrinkDto {
     required this.strDrinkThumb,
     required this.strImageSource,
     required this.dateModified,
+    required this.strInstructions,
   });
 }
 

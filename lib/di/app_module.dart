@@ -9,6 +9,7 @@ import 'package:dio/dio.dart';
 import '../data/database/app_database.dart';
 import '../data/repository/drink_repository_impl.dart';
 import '../domain/usecases/get_drinks_use_case.dart';
+import '../presentation/detail/detail_bloc.dart';
 import '../presentation/home/home_bloc.dart';
 
 final sl = GetIt.instance;
@@ -52,10 +53,10 @@ Future<void> initializeDependencies() async {
   sl.registerFactory<HomeBloc>(
           ()=> HomeBloc(sl())
   );
-/*
-  sl.registerFactory<LocalArticleBloc>(
-          ()=> LocalArticleBloc(sl(),sl(),sl())
+
+  sl.registerFactory<DetailBloc>(
+          ()=> DetailBloc(sl(),sl(),sl())
   );
-*/
+
 
 }

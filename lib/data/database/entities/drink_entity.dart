@@ -10,6 +10,7 @@ class DrinkEntity extends Equatable{
   final String urlThumbnail;
   final String urlImage;
   final String modifiedAt;
+  final String instruction;
 
   const DrinkEntity({
     required this.id,
@@ -18,6 +19,7 @@ class DrinkEntity extends Equatable{
     required this.urlThumbnail,
     required this.urlImage,
     required this.modifiedAt,
+    required this.instruction,
   });
 
   @override
@@ -29,6 +31,7 @@ class DrinkEntity extends Equatable{
       urlThumbnail,
       urlImage,
       modifiedAt,
+      instruction
     ];
   }
 }

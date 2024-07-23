@@ -14,7 +14,7 @@ class HomeBloc extends Bloc<HomeEvent,HomeState> {
   }
 
   void _onGetArticles(GetDrinks event, Emitter <HomeState> emit) async {
-    final result = await _getDrinksUseCase("margarita");
+    final result = await _getDrinksUseCase("");
 
     if (result is Resource && result.data!.isNotEmpty) {
       emit(

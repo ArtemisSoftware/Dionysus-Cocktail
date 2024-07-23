@@ -8,12 +8,12 @@ class CocktailCardWidget extends StatelessWidget {
   final Drink drink;
   // final bool ? isRemovable;
   // final void Function(ArticleEntity article) ? onRemove;
-  // final void Function(ArticleEntity article) ? onArticlePressed;
+  final void Function(Drink drink) onDrinkPressed;
 
   const CocktailCardWidget({
     Key ? key,
     required this.drink,
-    // this.onArticlePressed,
+    required this.onDrinkPressed,
     // this.isRemovable = false,
     // this.onRemove,
   }): super(key: key);
@@ -22,7 +22,7 @@ class CocktailCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
-      // onTap: _onTap,
+      onTap: _onTap,
       child: Container(
         padding: const EdgeInsetsDirectional.only(start: 14, end: 14, bottom: 7, top: 7),
           height: MediaQuery.of(context).size.width / 2.2,
@@ -152,13 +152,11 @@ class CocktailCardWidget extends StatelessWidget {
     }
     return Container();
   }
-
+*/
   void _onTap() {
-    if (onArticlePressed != null) {
-      onArticlePressed!(article!);
-    }
+    onDrinkPressed(drink);
   }
-
+/*
   void _onRemove() {
     if (onRemove != null) {
       onRemove!(article!);

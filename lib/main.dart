@@ -2,6 +2,7 @@ import 'package:dionysus_cocktail/di/app_module.dart';
 import 'package:dionysus_cocktail/presentation/home/home.dart';
 import 'package:dionysus_cocktail/presentation/home/home_bloc.dart';
 import 'package:dionysus_cocktail/presentation/home/home_event.dart';
+import 'package:dionysus_cocktail/presentation/navigation/routes.dart';
 import 'package:dionysus_cocktail/presentation/ui/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
           debugShowCheckedModeBanner: true,
           theme: theme(),
-          //onGenerateRoute: AppRoutes.onGenerateRoutes,
+          onGenerateRoute: Routes.onGenerateRoutes,
           home: const Home()
       ),
     );

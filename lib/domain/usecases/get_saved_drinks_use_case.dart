@@ -1,3 +1,5 @@
+import 'package:dionysus_cocktail/domain/models/drink.dart';
+
 import '../repository/drink_repository.dart';
 
 class GetSavedDrinksUseCase {
@@ -6,7 +8,7 @@ class GetSavedDrinksUseCase {
 
   GetSavedDrinksUseCase(this._drinkRepository);
 
-  Future<void> call() {
+  Future<List<Drink>> call() {
     return _drinkRepository.getSavedDrinks();
   }
 }

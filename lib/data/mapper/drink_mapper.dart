@@ -6,13 +6,22 @@ import '../../domain/models/drink.dart';
 class DrinkMapper {
 
   static DrinkDto fromJson(Map < String, dynamic > map) {
+    var image =  "";
+
+    if(map['strImageSource'] != null && map['strImageSource'] != "") {
+      image = map['strImageSource'];
+    } else {
+      image =  map['strDrinkThumb'];
+    }
+
     return DrinkDto(
       idDrink: map['idDrink'] ?? "",
       strDrink: map['strDrink'] ?? "",
       strIBA: map['strIBA'] ?? "",
       strDrinkThumb: map['strDrinkThumb'] ?? "",
-      strImageSource: map['strImageSource'] != null && map['strImageSource'] != "" ? map['strDrinkThumb'] : "",
+      strImageSource: image,
       dateModified: map['dateModified'] ?? "",
+      strInstructions: map['strInstructions'] ?? "",
     );
   }
 
@@ -24,6 +33,7 @@ class DrinkMapper {
       urlThumbnail: drink.strDrinkThumb,
       urlImage: drink.strImageSource,
       modifiedAt: drink.dateModified,
+      instruction: drink.strInstructions,
     );
   }
 
@@ -35,6 +45,7 @@ class DrinkMapper {
       urlThumbnail: drink.urlThumbnail,
       urlImage: drink.urlImage,
       modifiedAt: drink.modifiedAt,
+      instruction: drink.instruction,
     );
   }
 
@@ -46,6 +57,7 @@ class DrinkMapper {
       urlThumbnail: drink.urlThumbnail,
       urlImage: drink.urlImage,
       modifiedAt: drink.modifiedAt,
+      instruction: drink.instruction,
     );
   }
 

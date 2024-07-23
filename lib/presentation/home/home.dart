@@ -1,4 +1,5 @@
 
+import 'package:dionysus_cocktail/domain/models/drink.dart';
 import 'package:dionysus_cocktail/presentation/home/home_bloc.dart';
 import 'package:dionysus_cocktail/presentation/home/home_state.dart';
 import 'package:dionysus_cocktail/presentation/home/widget/cocktail_card_widget.dart';
@@ -35,7 +36,7 @@ class Home extends StatelessWidget {
               itemBuilder: (context,index){
                 return CocktailCardWidget(
                   drink: state.drinks[index] ,
-                  // onArticlePressed: (article) => _onArticlePressed(context,article),
+                  onDrinkPressed: (drink) => _onDrinkPressed(context, drink),
                 );
               },
               itemCount: state.drinks.length,
@@ -45,10 +46,12 @@ class Home extends StatelessWidget {
       },
     );
   }
-/*
-  void _onArticlePressed(BuildContext context, ArticleEntity article) {
-    Navigator.pushNamed(context, '/ArticleDetails', arguments: article);
+
+  void _onDrinkPressed(BuildContext context, Drink drink) {
+    Navigator.pushNamed(context, '/Details', arguments: drink);
   }
+/*
+
 
   void _onShowSavedArticlesViewTapped(BuildContext context) {
     Navigator.pushNamed(context, '/SavedArticles');
