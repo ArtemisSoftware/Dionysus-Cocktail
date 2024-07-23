@@ -1,5 +1,8 @@
 import 'package:dionysus_cocktail/data/network/cocktail_api.dart';
 import 'package:dionysus_cocktail/domain/repository/drink_repository.dart';
+import 'package:dionysus_cocktail/domain/usecases/get_saved_drinks_use_case.dart';
+import 'package:dionysus_cocktail/domain/usecases/remove_drink_use_case.dart';
+import 'package:dionysus_cocktail/domain/usecases/save_drink_use_case.dart';
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
 
@@ -24,26 +27,26 @@ Future<void> initializeDependencies() async {
 
   // Repository
   sl.registerSingleton<DrinkRepository>(
-      DrinkRepositoryImpl(sl()/*,sl()*/)
+      DrinkRepositoryImpl(sl(),sl())
   );
 
   //UseCases
   sl.registerSingleton<GetDrinksUseCase>(
       GetDrinksUseCase(sl())
   );
-/*
-  sl.registerSingleton<GetSavedArticleUseCase>(
-      GetSavedArticleUseCase(sl())
+
+  sl.registerSingleton<GetSavedDrinksUseCase>(
+      GetSavedDrinksUseCase(sl())
   );
 
-  sl.registerSingleton<SaveArticleUseCase>(
-      SaveArticleUseCase(sl())
+  sl.registerSingleton<SaveDrinkUseCase>(
+      SaveDrinkUseCase(sl())
   );
 
-  sl.registerSingleton<RemoveArticleUseCase>(
-      RemoveArticleUseCase(sl())
+  sl.registerSingleton<RemoveDrinkUseCase>(
+      RemoveDrinkUseCase(sl())
   );
-*/
+
 
   //Blocs
   sl.registerFactory<HomeBloc>(

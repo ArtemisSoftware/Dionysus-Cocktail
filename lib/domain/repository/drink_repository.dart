@@ -7,10 +7,10 @@ abstract class DrinkRepository {
   // API methods
   Future<Resource<List<Drink>>> getDrinks(String name);
 
-  // // Database methods
-  // Future < List < ArticleEntity >> getSavedArticles();
-  //
-  // Future < void > saveArticle(ArticleEntity article);
-  //
-  // Future < void > removeArticle(ArticleEntity article);
+  // Database methods
+  Future<List<Drink>> getSavedDrinks();
+
+  Future<void> saveDrink(Drink drink);
+
+  Future<void> removeDrink(Drink drink);
 }

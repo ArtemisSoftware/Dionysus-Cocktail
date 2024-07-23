@@ -1,3 +1,4 @@
+import 'package:dionysus_cocktail/data/database/entities/drink_entity.dart';
 import 'package:dionysus_cocktail/data/network/dto/drink_dto.dart';
 
 import '../../domain/models/drink.dart';
@@ -10,9 +11,7 @@ class DrinkMapper {
       strDrink: map['strDrink'] ?? "",
       strIBA: map['strIBA'] ?? "",
       strDrinkThumb: map['strDrinkThumb'] ?? "",
-      // strImageSource: map['strImageSource'],
-      // // TODO: rever isto
-      // //strImageSource: map['strImageSource'] != null && map['strImageSource'] != "" ? map['strImageSource'] : kDefaultImage,
+      strImageSource: map['strImageSource'] != null && map['strImageSource'] != "" ? map['strDrinkThumb'] : "",
       dateModified: map['dateModified'] ?? "",
     );
   }
@@ -23,28 +22,31 @@ class DrinkMapper {
       name: drink.strDrink,
       description: drink.strIBA,
       urlThumbnail: drink.strDrinkThumb,
-      // urlImage: drink.strImageSource,
+      urlImage: drink.strImageSource,
       modifiedAt: drink.dateModified,
     );
   }
 
-  // static UserDTO toDTO(User user) {
-  //   final birthYear = DateTime.now().year - user.age;
-  //   return UserDTO(
-  //     id: user.id,
-  //     fullName: user.name,
-  //     birthYear: birthYear.toString(),
-  //   );
-  // }
-  //
-  // // Convert UserDTO to User
-  // static User fromDTO(UserDTO userDTO) {
-  //   final currentYear = DateTime.now().year;
-  //   final age = currentYear - int.parse(userDTO.birthYear);
-  //   return User(
-  //     id: userDTO.id,
-  //     name: userDTO.fullName,
-  //     age: age,
-  //   );
-  // }
+  static Drink fromEntity(DrinkEntity drink) {
+    return Drink(
+      id: drink.id,
+      name: drink.name,
+      description: drink.description,
+      urlThumbnail: drink.urlThumbnail,
+      urlImage: drink.urlImage,
+      modifiedAt: drink.modifiedAt,
+    );
+  }
+
+  static DrinkEntity toEntity(Drink drink) {
+    return DrinkEntity(
+      id: drink.id,
+      name: drink.name,
+      description: drink.description,
+      urlThumbnail: drink.urlThumbnail,
+      urlImage: drink.urlImage,
+      modifiedAt: drink.modifiedAt,
+    );
+  }
+
 }
