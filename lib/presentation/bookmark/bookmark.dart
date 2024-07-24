@@ -34,7 +34,7 @@ class Bookmark extends HookWidget {
           child: const Icon(Ionicons.chevron_back, color: Colors.black),
         ),
       ),
-      title: const Text('Saved Articles', style: TextStyle(color: Colors.black)),
+      title: const Text('Saved drinks', style: TextStyle(color: Colors.black)),
     );
   }
 
@@ -65,8 +65,8 @@ class Bookmark extends HookWidget {
       itemBuilder: (context, index) {
         return CocktailCardWidget(
           drink: drinks[index],
-          // isRemovable: true,
-          // onRemove: (article) => _onRemoveDrink(context, article),
+          isRemovable: true,
+          onRemove: (drink) => _onRemoveDrink(context, drink),
           onDrinkPressed: (drink) => _onDrinkPressed(context, drink),
         );
       },

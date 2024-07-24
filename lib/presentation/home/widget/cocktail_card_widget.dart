@@ -6,16 +6,16 @@ import '../../../domain/models/drink.dart';
 
 class CocktailCardWidget extends StatelessWidget {
   final Drink drink;
-  // final bool ? isRemovable;
-  // final void Function(ArticleEntity article) ? onRemove;
+  final bool isRemovable;
+  final void Function(Drink drink) ? onRemove;
   final void Function(Drink drink) onDrinkPressed;
 
   const CocktailCardWidget({
     Key ? key,
     required this.drink,
     required this.onDrinkPressed,
-    // this.isRemovable = false,
-    // this.onRemove,
+    this.isRemovable = false,
+    this.onRemove,
   }): super(key: key);
 
   @override
@@ -30,7 +30,7 @@ class CocktailCardWidget extends StatelessWidget {
             children: [
               _buildImage(context),
               _buildTitleAndDescription(),
-              // _buildRemovableArea(),
+              _buildRemovableArea(),
             ],
           ),
       ),
@@ -139,9 +139,9 @@ class CocktailCardWidget extends StatelessWidget {
       ),
     );
   }
-/*
+
   Widget _buildRemovableArea() {
-    if (isRemovable!) {
+    if (isRemovable) {
       return GestureDetector(
         onTap: _onRemove,
         child: const Padding(
@@ -152,15 +152,15 @@ class CocktailCardWidget extends StatelessWidget {
     }
     return Container();
   }
-*/
+
   void _onTap() {
     onDrinkPressed(drink);
   }
-/*
+
   void _onRemove() {
     if (onRemove != null) {
-      onRemove!(article!);
+      onRemove!(drink);
     }
   }
-  */
+
 }
