@@ -3,6 +3,7 @@ import 'package:dionysus_cocktail/domain/repository/drink_repository.dart';
 import 'package:dionysus_cocktail/domain/usecases/get_saved_drinks_use_case.dart';
 import 'package:dionysus_cocktail/domain/usecases/remove_drink_use_case.dart';
 import 'package:dionysus_cocktail/domain/usecases/save_drink_use_case.dart';
+import 'package:dionysus_cocktail/presentation/bookmark/bookmark_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
 
@@ -58,5 +59,7 @@ Future<void> initializeDependencies() async {
           ()=> DetailBloc(sl(),sl(),sl())
   );
 
-
+  sl.registerFactory<BookmarkBloc>(
+          ()=> BookmarkBloc(sl(),sl())
+  );
 }

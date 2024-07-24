@@ -15,8 +15,28 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: topBar('Cocktail List'),
+      appBar: _buildAppbar(context),
       body: _buildBody(),
+    );
+  }
+
+  _buildAppbar(BuildContext context) {
+    return AppBar(
+      title: const Text(
+        'Cocktail List',
+        style: TextStyle(
+            color: Colors.black
+        ),
+      ),
+      actions: [
+        GestureDetector(
+          onTap: () => _onShowSavedDrinksTapped(context),
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 14),
+            child: Icon(Icons.bookmark, color: Colors.black),
+          ),
+        ),
+      ],
     );
   }
 
@@ -50,11 +70,9 @@ class Home extends StatelessWidget {
   void _onDrinkPressed(BuildContext context, Drink drink) {
     Navigator.pushNamed(context, '/Details', arguments: drink);
   }
-/*
 
-
-  void _onShowSavedArticlesViewTapped(BuildContext context) {
-    Navigator.pushNamed(context, '/SavedArticles');
+  void _onShowSavedDrinksTapped(BuildContext context) {
+    Navigator.pushNamed(context, '/SavedDrinks');
   }
-*/
+
 }

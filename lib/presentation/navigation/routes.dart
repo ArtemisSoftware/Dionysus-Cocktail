@@ -1,4 +1,5 @@
 import 'package:dionysus_cocktail/domain/models/drink.dart';
+import 'package:dionysus_cocktail/presentation/bookmark/bookmark.dart';
 import 'package:dionysus_cocktail/presentation/home/home.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +14,8 @@ class Routes {
       case '/Details':
         return _materialRoute(Detail(drink: settings.arguments as Drink));
 
-      // case '/SavedArticles':
-      //   return _materialRoute(const SavedArticles());
+      case '/SavedDrinks':
+        return _materialRoute(const Bookmark());
 
       default:
         return _materialRoute(const Home());
