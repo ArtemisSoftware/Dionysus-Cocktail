@@ -1,16 +1,24 @@
-# dionysus_cocktail
+# Dionysus-Cocktail
 
-A new Flutter project.
+Cocktail application, where we can browse various flavours of cocktail
 
-## Getting Started
+## The Brief
 
-This project is a starting point for a Flutter application.
+App allows to browse cocktails, check their details and bookmark them
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Architecture & Libraries
+    - Bloc
+    - Get it
+    - Retrofit
+    - Floor
+    
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## App preview:
+
+
+
+
+|                  Image #1                  |                  Image #2                  |                  Image #3                  |                  Image #4                  |
+|:------------------------------------------:|:------------------------------------------:|:------------------------------------------:|:------------------------------------------:|
+| <img src="images/Dionysus_Cocktail_1.jpg"> | <img src="images/Dionysus_Cocktail_2.jpg"> | <img src="images/Dionysus_Cocktail_3.jpg"> | <img src="images/Dionysus_Cocktail_4.jpg"> |
